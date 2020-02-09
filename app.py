@@ -2,6 +2,7 @@ import flask
 import os
 import requests
 import spoon_api
+import twitter_api
 import random
 
 
@@ -15,13 +16,16 @@ def index():
     randomize = random.randint(0, 9)
 
     current_cell = spoon_api.json_body["results"][randomize]
+    current_tweet = twitter_api.json_body["statuses"][randomize]
     
+    tw = current_tweet["text"]
+    sn = current_tweet["user"]["screen_name"]
     t = current_cell["title"]
     p = current_cell["readyInMinutes"]
     i = current_cell["image"]
     l = current_cell["sourceUrl"]
     print(l)
-    return flask.render_template("index.html", title=t, prep_time=p, image=i, link=l)
+    return flask.render_template("index.html", title=t, prep_time=p, image=i, link=l, tweet=tw, screen_name=sn)
     
     
 app.run(
