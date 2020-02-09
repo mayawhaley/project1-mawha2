@@ -18,8 +18,9 @@ def index():
     
     t = current_cell["title"]
     p = current_cell["readyInMinutes"]
-    
-    return flask.render_template("index.html", title=t, prep_time=p)
+    i = current_cell["image"]
+    print(i)
+    return flask.render_template("index.html", title=t, prep_time=p, image=i)
     
     
 app.run(
