@@ -1,21 +1,21 @@
 import requests
 import json
+import os
+import random
 
-# add free parameter?
-url = "https://api.spoonacular.com/recipes/complexSearch?query=red-velvet&addRecipeInformation=true&instructionsRequired=true%20free&apiKey="
 
-# get red velvet spoonacular endpoint + secret api key
+
+url = "https://api.spoonacular.com/recipes/complexSearch?query=pudding&addRecipeInformation=true&instructionsRequired=true%20free&apiKey="
+
 
 # Heroku secrets
-# url = 
+# api_key = os.getenv("API_Key")
+# endpoint = "https://api.spoonacular.com/recipes/complexSearch?query=red-velvet&addRecipeInformation=true&instructionsRequired=true%20free&apiKey="
+# url = endpoint + str(api_key)
 
-# "API_Key"
 
-
-# for parsing
 response = requests.get(url)
 json_body = response.json()
+# print(json.dumps(json_body))
 
-title = json_body["results"][0]["title"]
-prep_time = json_body["results"][2]["readyInMinutes"]
-#print(json.dumps(json_body, indent=2))
+
