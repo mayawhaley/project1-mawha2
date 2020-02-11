@@ -11,7 +11,7 @@ oauth = requests_oauthlib.OAuth1(
     "API_Key"
     )
 
-response = requests.get(url,auth=oauth)
+response = requests.get(url + oauth)
 json_body = response.json()
 # print(json.dumps(json_body))
 
