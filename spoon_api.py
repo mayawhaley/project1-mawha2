@@ -1,15 +1,19 @@
 import requests
+import requests_oauthlib
 import json
 import os
 
+url = "https://api.spoonacular.com/recipes/complexSearch?query=pudding&addRecipeInformation=true&instructionsRequired=true%20free&apiKey="
 
-api_key = os.getenv("API_Key")
-endpoint = "https://api.spoonacular.com/recipes/complexSearch?query=red-velvet&addRecipeInformation=true&instructionsRequired=true%20free&apiKey="
-url = endpoint + str(api_key)
+oauth = requests_oauthlib.OAuth1(
+    "API_Key"
+    )
 
-
-response = requests.get(url)
+response = requests.get(url, auth=oauth)
 json_body = response.json()
+
+
+
 
 
 
