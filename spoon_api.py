@@ -10,7 +10,7 @@ oauth = requests_oauthlib.OAuth1(
     )
 
 response = requests.get(url, auth=oauth)
-json_body = response.json()
+sp_data = response.json()
 
 
 
