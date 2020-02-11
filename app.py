@@ -9,13 +9,11 @@ import random
 app = flask.Flask(__name__)
 
 
-
 @app.route('/')
 def index():
-    
     randomize = random.randint(0, 9)
 
-    current_cell = spoon_api.sp_data["results"][randomize]
+    current_cell = spoon_api.json_body["results"][randomize]
     current_tweet = twitter_api.json_body["statuses"][randomize]
     
     
@@ -26,6 +24,7 @@ def index():
     i = current_cell["image"]
     l = current_cell["sourceUrl"]
     
+   
     return flask.render_template("index.html", title=t, prep_time=p, image=i, link=l, tweet=tw, screen_name=sn)
     
     

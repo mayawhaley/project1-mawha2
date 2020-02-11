@@ -11,6 +11,6 @@ oauth = requests_oauthlib.OAuth1(
     "TWI_API_Secret_Key"
     )
 
-response = requests.get(url, auth=oauth)
+response = requests.get(url,auth=oauth)
 json_body = response.json()
-
+print(json.dumps(json_body))
