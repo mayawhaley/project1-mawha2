@@ -18,13 +18,13 @@ def index():
     current_cell = spoon_api.json_body["results"][randomize]
     current_tweet = twitter_api.json_body["statuses"][randomize]
     
-    tw = current_tweet["text"]
+    tw = current_tweet["full_text"]
     sn = current_tweet["user"]["screen_name"]
     t = current_cell["title"]
     p = current_cell["readyInMinutes"]
     i = current_cell["image"]
     l = current_cell["sourceUrl"]
-    print(l)
+    
     return flask.render_template("index.html", title=t, prep_time=p, image=i, link=l, tweet=tw, screen_name=sn)
     
     

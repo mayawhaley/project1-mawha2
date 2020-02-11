@@ -1,14 +1,49 @@
 <html>
     <head>
+     <style>
+        body {background-color: #305F72;
+        }
+        
+        h1 {color: #F1D1B5; 
+            font-family: "Gill Sans";
+            text-align: center;
+        }
+        
+        h2 {color: #F18C8E;
+            font-family: "Gill Sans";
+            text-align: center;
+        }
+        
+        h3 {color: #F0B7A4;
+            font-family: "Gill Sans";
+            text-align: center;
+        }
+        
+        p {color: white;
+            font-family: "Gill Sans";
+            text-align: center;
+        }
+        
+        img {display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width:300px;
+            height:300px;
+        }
+        
+        a {
+            display:block;
+            text-align: center;
+            color: white;
+        }
+     </style>   
     </head>
     <body>
-        <h1>Pudding!</h1>
+        <h1>Yay, Pudding!</h1>
         <h2> {{title}} </h2>
         <h3> Prep Time: {{prep_time}} </h3>
         <p> @{{screen_name}}: {{tweet}} </p>
-        <img src="{{ image }}" style= "width:300px;height:300px;">
+        <img src="{{ image }}">
         <a href= "{{ link }}"> "Click here for this recipe! </a>
-        <!--<a href="https://twitter.com/intent/tweet?button_hashtag=puddingdessert&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #puddingdessert</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
-        
     </body>
 </html>
