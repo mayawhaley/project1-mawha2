@@ -7,11 +7,11 @@ url = "https://api.spoonacular.com/recipes/complexSearch?query=pudding&addRecipe
 # 541651421a774a08bbadc9089fe32d78"
 
 
-oauth = requests_oauthlib.OAuth1(
-    "API_Key"
-    )
+# oauth = requests_oauthlib.OAuth1(
+#     "API_Key"
+#     )
 
-response = requests.get(url + oauth)
+response = requests.get(url + os.getenv("API_Key"))
 json_body = response.json()
 # print(json.dumps(json_body))
 
