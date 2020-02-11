@@ -3,8 +3,8 @@ import requests_oauthlib
 import json
 import os
 
-url = "https://api.spoonacular.com/recipes/complexSearch?query=pudding&addRecipeInformation=true&instructionsRequired=true%20free&apiKey="
-api_key = os.getenv("API_Key")
+url = "https://api.spoonacular.com/recipes/complexSearch?query=pudding&addRecipeInformation=true&instructionsRequired=true%20free&apiKey=541651421a774a08bbadc9089fe32d78"
+# api_key = os.getenv("API_Key")
 
 # "541651421a774a08bbadc9089fe32d78"
 
@@ -12,7 +12,7 @@ api_key = os.getenv("API_Key")
     
 #     )
 
-response = requests.get(url, api_key)
+response = requests.get(url)
 # ,auth=oauth)
 json_body = response.json()
 
