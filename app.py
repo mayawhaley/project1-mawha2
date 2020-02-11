@@ -13,9 +13,8 @@ app = flask.Flask(__name__)
 def index():
     randomize = random.randint(0, 9)
 
-    current_cell = spoon_api.json_body["results"][randomize]
     current_tweet = twitter_api.json_body["statuses"][randomize]
-    
+    current_cell = spoon_api.json_body["results"][randomize]
     
     tw = current_tweet["full_text"]
     sn = current_tweet["user"]["screen_name"]
