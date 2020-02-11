@@ -17,6 +17,6 @@ oauth = requests_oauthlib.OAuth1(
     token_secret
     )
 
-# response = requests.get(url,auth=oauth)
+
 response = requests.get(url, auth=oauth)
 json_body = response.json()
